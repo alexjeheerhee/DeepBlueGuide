@@ -1,0 +1,579 @@
+[
+  {
+    "id": "striped-bass",
+    "name": "Striped Bass",
+    "scientificName": "Morone saxatilis",
+    "status": "native",
+    "locations": [
+      "ocean-city",
+      "outer-banks",
+      "cape-cod"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 50,
+    "tempMaxF": 70,
+    "bestTime": "Dawn and dusk",
+    "diet": "Menhaden and other small fish, crabs",
+    "habitat": "Bays, inlets, and the surf zone",
+    "idTips": "Silver body with 7 to 8 dark stripes running from head to tail",
+    "whatToDo": "Follow local size and bag limits.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "summer-flounder",
+    "name": "Summer Flounder (Fluke)",
+    "scientificName": "Paralichthys dentatus",
+    "status": "native",
+    "locations": [
+      "ocean-city",
+      "outer-banks",
+      "cape-cod"
+    ],
+    "seasons": [
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 58,
+    "tempMaxF": 75,
+    "bestTime": "Daytime, especially on moving tides",
+    "diet": "Small fish, squid, and shrimp",
+    "habitat": "Sandy bottoms near inlets",
+    "idTips": "Flat body with both eyes on the left side; brown with eye-like spots",
+    "whatToDo": "Follow local size and bag limits.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "bluefish",
+    "name": "Bluefish",
+    "scientificName": "Pomatomus saltatrix",
+    "status": "native",
+    "locations": [
+      "ocean-city",
+      "outer-banks",
+      "cape-cod"
+    ],
+    "seasons": [
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 64,
+    "tempMaxF": 78,
+    "bestTime": "Morning and evening",
+    "diet": "Schools of small fish",
+    "habitat": "Open water, surf, and inlets",
+    "idTips": "Blue-green back, silver sides, and a large jaw with sharp teeth",
+    "whatToDo": "Handle carefully because of the sharp teeth.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "atlantic-sturgeon",
+    "name": "Atlantic Sturgeon",
+    "scientificName": "Acipenser oxyrinchus oxyrinchus",
+    "status": "endangered",
+    "locations": [
+      "ocean-city",
+      "outer-banks"
+    ],
+    "seasons": [
+      "Spring",
+      "Fall"
+    ],
+    "tempMinF": 50,
+    "tempMaxF": 72,
+    "bestTime": "Any time; feeds along the bottom",
+    "diet": "Worms, clams, and small crustaceans",
+    "habitat": "Rivers, estuaries, and nearshore ocean",
+    "idTips": "Long body with rows of bony plates, a shark-like tail, and whisker-like barbels",
+    "whatToDo": "Release immediately with as little handling as possible. It is illegal to keep.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "lionfish",
+    "name": "Red Lionfish",
+    "scientificName": "Pterois volitans",
+    "status": "invasive",
+    "locations": [
+      "outer-banks",
+      "miami",
+      "galveston"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 70,
+    "tempMaxF": 88,
+    "bestTime": "Dawn and dusk",
+    "diet": "Small reef fish and shrimp",
+    "habitat": "Reefs, wrecks, and hard bottom",
+    "idTips": "Red and white stripes with long, fan-like spines",
+    "whatToDo": "The spines are venomous, so do not touch. Removal is encouraged; report sightings to your state wildlife agency.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "atlantic-cod",
+    "name": "Atlantic Cod",
+    "scientificName": "Gadus morhua",
+    "status": "native",
+    "locations": [
+      "cape-cod"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 35,
+    "tempMaxF": 55,
+    "bestTime": "Day and night near the bottom",
+    "diet": "Small fish, crabs, and shrimp",
+    "habitat": "Rocky and gravel bottoms in cold water",
+    "idTips": "Three dorsal fins, a chin barbel, and a pale line along the side",
+    "whatToDo": "The population in New England is low. Check current rules before fishing.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "green-crab",
+    "name": "European Green Crab",
+    "scientificName": "Carcinus maenas",
+    "status": "invasive",
+    "locations": [
+      "cape-cod",
+      "monterey",
+      "newport"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 45,
+    "tempMaxF": 78,
+    "bestTime": "Most active at night",
+    "diet": "Clams, mussels, and young crabs",
+    "habitat": "Tide pools, salt marshes, and mudflats",
+    "idTips": "Five spines on each side of the shell behind the eyes; color varies and is not always green",
+    "whatToDo": "Never move it or release it somewhere else. Report sightings where it is new.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "right-whale",
+    "name": "North Atlantic Right Whale",
+    "scientificName": "Eubalaena glacialis",
+    "status": "endangered",
+    "locations": [
+      "cape-cod"
+    ],
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "tempMinF": 35,
+    "tempMaxF": 60,
+    "bestTime": "Daytime, often near the surface",
+    "diet": "Tiny copepods filtered from the water",
+    "habitat": "Cape Cod Bay and coastal waters",
+    "idTips": "Dark body with no dorsal fin, rough white patches on the head, and a V-shaped blow",
+    "whatToDo": "Federal law requires staying at least 500 yards away.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "snook",
+    "name": "Common Snook",
+    "scientificName": "Centropomus undecimalis",
+    "status": "native",
+    "locations": [
+      "miami"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 68,
+    "tempMaxF": 88,
+    "bestTime": "Dawn, dusk, and night",
+    "diet": "Small fish, shrimp, and crabs",
+    "habitat": "Mangroves, inlets, docks, and beaches",
+    "idTips": "Sleek silver body with a bold black line along the side and a sloped forehead",
+    "whatToDo": "Sensitive to cold. Follow Florida seasons and slot limits.",
+    "source": "Florida Fish and Wildlife Conservation Commission"
+  },
+  {
+    "id": "tarpon",
+    "name": "Tarpon",
+    "scientificName": "Megalops atlanticus",
+    "status": "native",
+    "locations": [
+      "miami",
+      "galveston"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 74,
+    "tempMaxF": 90,
+    "bestTime": "Dawn, dusk, and night",
+    "diet": "Small fish, crabs, and shrimp",
+    "habitat": "Inlets, bays, and nearshore waters",
+    "idTips": "Large silver scales, an upturned mouth, and a long last ray on the dorsal fin",
+    "whatToDo": "Mostly caught and released. Keep large fish in the water when possible.",
+    "source": "Florida Fish and Wildlife Conservation Commission"
+  },
+  {
+    "id": "smalltooth-sawfish",
+    "name": "Smalltooth Sawfish",
+    "scientificName": "Pristis pectinata",
+    "status": "endangered",
+    "locations": [
+      "miami"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 72,
+    "tempMaxF": 88,
+    "bestTime": "Any time; often in shallow water",
+    "diet": "Small fish, shrimp, and crabs",
+    "habitat": "Shallow bays, mangroves, and estuaries",
+    "idTips": "Flat, shark-like body with a long, flat snout lined with teeth on both sides",
+    "whatToDo": "Never keep one. Leave it in the water, cut the line as close to the hook as is safe, and report the encounter.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "red-drum",
+    "name": "Red Drum (Redfish)",
+    "scientificName": "Sciaenops ocellatus",
+    "status": "native",
+    "locations": [
+      "galveston",
+      "outer-banks"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 60,
+    "tempMaxF": 85,
+    "bestTime": "Morning and evening on moving tides",
+    "diet": "Crabs, shrimp, and small fish",
+    "habitat": "Marshes, shallow bays, and surf",
+    "idTips": "Copper-bronze body with one or more black spots near the tail",
+    "whatToDo": "Follow local slot limits.",
+    "source": "Texas Parks and Wildlife Department"
+  },
+  {
+    "id": "spotted-seatrout",
+    "name": "Spotted Seatrout",
+    "scientificName": "Cynoscion nebulosus",
+    "status": "native",
+    "locations": [
+      "galveston"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 58,
+    "tempMaxF": 82,
+    "bestTime": "Dawn and dusk",
+    "diet": "Shrimp and small fish",
+    "habitat": "Seagrass beds and shallow bays",
+    "idTips": "Silvery-gray with scattered black spots on the back and tail; two large front teeth",
+    "whatToDo": "Follow local size and bag limits.",
+    "source": "Texas Parks and Wildlife Department"
+  },
+  {
+    "id": "kemps-ridley",
+    "name": "Kemp's Ridley Sea Turtle",
+    "scientificName": "Lepidochelys kempii",
+    "status": "endangered",
+    "locations": [
+      "galveston"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "tempMinF": 68,
+    "tempMaxF": 88,
+    "bestTime": "Daytime",
+    "diet": "Crabs and other shellfish",
+    "habitat": "Shallow Gulf waters, bays, and nesting beaches",
+    "idTips": "The smallest sea turtle, with a round gray-olive shell",
+    "whatToDo": "Do not approach or touch. Report nesting or stranded turtles to local authorities.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "california-halibut",
+    "name": "California Halibut",
+    "scientificName": "Paralichthys californicus",
+    "status": "native",
+    "locations": [
+      "santa-monica",
+      "monterey"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer"
+    ],
+    "tempMinF": 57,
+    "tempMaxF": 70,
+    "bestTime": "Daytime, especially on incoming tides",
+    "diet": "Anchovies and other small fish",
+    "habitat": "Sandy bottoms near shore and in bays",
+    "idTips": "Flat body that can have eyes on either side; a large mouth that reaches past the eye",
+    "whatToDo": "Follow California size limits.",
+    "source": "California Department of Fish and Wildlife"
+  },
+  {
+    "id": "kelp-bass",
+    "name": "Kelp Bass (Calico Bass)",
+    "scientificName": "Paralabrax clathratus",
+    "status": "native",
+    "locations": [
+      "santa-monica"
+    ],
+    "seasons": [
+      "Spring",
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 60,
+    "tempMaxF": 72,
+    "bestTime": "Morning and evening",
+    "diet": "Small fish, crabs, and squid",
+    "habitat": "Kelp forests and rocky reefs",
+    "idTips": "Olive-brown body with pale blotches in a calico pattern",
+    "whatToDo": "Follow California size and bag limits.",
+    "source": "California Department of Fish and Wildlife"
+  },
+  {
+    "id": "garibaldi",
+    "name": "Garibaldi",
+    "scientificName": "Hypsypops rubicundus",
+    "status": "protected",
+    "locations": [
+      "santa-monica"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 58,
+    "tempMaxF": 75,
+    "bestTime": "Daytime",
+    "diet": "Small invertebrates, sponges, and algae",
+    "habitat": "Rocky reefs and kelp forests",
+    "idTips": "Bright orange all over; young fish have blue spots",
+    "whatToDo": "California's state marine fish. It is illegal to take one.",
+    "source": "California Department of Fish and Wildlife"
+  },
+  {
+    "id": "devilweed",
+    "name": "Devilweed (invasive seaweed)",
+    "scientificName": "Sargassum horneri",
+    "status": "invasive",
+    "locations": [
+      "santa-monica"
+    ],
+    "seasons": [
+      "Winter",
+      "Spring"
+    ],
+    "tempMinF": 55,
+    "tempMaxF": 70,
+    "bestTime": "Visible any time of day",
+    "diet": "Makes its own food through photosynthesis",
+    "habitat": "Rocky reefs and harbors",
+    "idTips": "Brown seaweed with small air bladders and fern-like leaves; can form thick mats",
+    "whatToDo": "Do not move it between areas. Clean boats and gear before leaving.",
+    "source": "California Department of Fish and Wildlife"
+  },
+  {
+    "id": "sea-otter",
+    "name": "Southern Sea Otter",
+    "scientificName": "Enhydra lutris nereis",
+    "status": "threatened",
+    "locations": [
+      "monterey"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 50,
+    "tempMaxF": 64,
+    "bestTime": "Daytime; often resting in kelp",
+    "diet": "Sea urchins, crabs, clams, and snails",
+    "habitat": "Kelp forests, bays, and estuaries",
+    "idTips": "Small furry marine mammal that floats on its back and often uses rocks as tools",
+    "whatToDo": "Give plenty of space. If an otter changes what it is doing because of you, you are too close.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "leopard-shark",
+    "name": "Leopard Shark",
+    "scientificName": "Triakis semifasciata",
+    "status": "native",
+    "locations": [
+      "santa-monica",
+      "monterey"
+    ],
+    "seasons": [
+      "Summer",
+      "Fall"
+    ],
+    "tempMinF": 58,
+    "tempMaxF": 72,
+    "bestTime": "Daytime in shallow water, especially on rising tides",
+    "diet": "Crabs, clams, worms, and small fish",
+    "habitat": "Shallow bays, sandy flats, and near kelp",
+    "idTips": "Slim gray shark with dark saddle bars and spots along the back",
+    "whatToDo": "Harmless to people. Follow size limits.",
+    "source": "California Department of Fish and Wildlife"
+  },
+  {
+    "id": "lingcod",
+    "name": "Lingcod",
+    "scientificName": "Ophiodon elongatus",
+    "status": "native",
+    "locations": [
+      "monterey",
+      "newport"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 42,
+    "tempMaxF": 58,
+    "bestTime": "Daytime near rocky bottom",
+    "diet": "Fish, squid, and octopus",
+    "habitat": "Rocky reefs",
+    "idTips": "Large head and mouth with sharp teeth; mottled brown-gray body",
+    "whatToDo": "Follow local seasons and size limits.",
+    "source": "Oregon Department of Fish and Wildlife"
+  },
+  {
+    "id": "black-rockfish",
+    "name": "Black Rockfish",
+    "scientificName": "Sebastes melanops",
+    "status": "native",
+    "locations": [
+      "newport"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 45,
+    "tempMaxF": 58,
+    "bestTime": "Daytime, in mid-water over reefs",
+    "diet": "Small fish, krill, and crab larvae",
+    "habitat": "Rocky reefs, jetties, and kelp",
+    "idTips": "Dark gray to black body with a pale belly and a spiny dorsal fin",
+    "whatToDo": "Fish brought up from deep water can be injured by the pressure change. Use a descending device when releasing.",
+    "source": "Oregon Department of Fish and Wildlife"
+  },
+  {
+    "id": "dungeness-crab",
+    "name": "Dungeness Crab",
+    "scientificName": "Metacarcinus magister",
+    "status": "native",
+    "locations": [
+      "newport",
+      "monterey"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 45,
+    "tempMaxF": 60,
+    "bestTime": "More active at night",
+    "diet": "Clams, small crabs, worms, and fish",
+    "habitat": "Sandy and muddy bottoms, bays",
+    "idTips": "Purple-brown shell with white-tipped claws",
+    "whatToDo": "Only males of legal size may be kept. Check current seasons.",
+    "source": "Oregon Department of Fish and Wildlife"
+  },
+  {
+    "id": "monk-seal",
+    "name": "Hawaiian Monk Seal",
+    "scientificName": "Neomonachus schauinslandi",
+    "status": "endangered",
+    "locations": [
+      "honolulu"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 72,
+    "tempMaxF": 84,
+    "bestTime": "Rests on beaches by day, feeds at night",
+    "diet": "Fish, octopus, eels, and lobsters",
+    "habitat": "Beaches and reefs",
+    "idTips": "Gray-brown seal with no visible ear flaps; often rests on the sand",
+    "whatToDo": "Stay at least 50 feet away, and 150 feet from a mother with a pup.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "green-sea-turtle",
+    "name": "Green Sea Turtle (Honu)",
+    "scientificName": "Chelonia mydas",
+    "status": "threatened",
+    "locations": [
+      "honolulu",
+      "miami"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 72,
+    "tempMaxF": 88,
+    "bestTime": "Daytime, grazing in shallow water",
+    "diet": "Seaweed and seagrass",
+    "habitat": "Reefs, seagrass beds, and shallow coastal waters",
+    "idTips": "Smooth oval shell and a small rounded head with a blunt beak",
+    "whatToDo": "Stay at least 10 feet away. Never touch or feed.",
+    "source": "NOAA Fisheries"
+  },
+  {
+    "id": "reef-triggerfish",
+    "name": "Reef Triggerfish (Humuhumunukunukuapuaa)",
+    "scientificName": "Rhinecanthus rectangulus",
+    "status": "native",
+    "locations": [
+      "honolulu"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 72,
+    "tempMaxF": 86,
+    "bestTime": "Daytime",
+    "diet": "Small invertebrates, algae, and sea urchins",
+    "habitat": "Shallow reefs and reef flats",
+    "idTips": "Hawaii's state fish; a black wedge-shaped band on the side and yellow lines near the mouth",
+    "whatToDo": "Enjoy watching and do not touch the reef.",
+    "source": "Hawaii Division of Aquatic Resources"
+  },
+  {
+    "id": "roi",
+    "name": "Roi (Peacock Grouper)",
+    "scientificName": "Cephalopholis argus",
+    "status": "invasive",
+    "locations": [
+      "honolulu"
+    ],
+    "seasons": [
+      "All"
+    ],
+    "tempMinF": 72,
+    "tempMaxF": 86,
+    "bestTime": "Dawn and dusk",
+    "diet": "Small reef fish",
+    "habitat": "Coral reefs",
+    "idTips": "Dark brown body covered in small blue spots",
+    "whatToDo": "Introduced to Hawaii in the 1950s. It can carry ciguatera toxin, so eating it is not recommended.",
+    "source": "Hawaii Division of Aquatic Resources"
+  }
+]
+

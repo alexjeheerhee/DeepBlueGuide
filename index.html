@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deepBlueGuide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>deepBlueGuide</h1>
+    <p>Your local ocean and marine life guide</p>
+  </header>
+
+  <main>
+    <section id="conditions">
+      <h2>Ocean Conditions Today</h2>
+
+      <label for="location-select">Location</label>
+      <select id="location-select"></select>
+
+      <p class="updated">Updated: <span id="updated-time">Loading...</span></p>
+
+      <h3>Weather</h3>
+      <p>Air temperature: <span id="air-temp">Loading...</span></p>
+      <p>Sky: <span id="sky">Loading...</span></p>
+      <p>Wind speed: <span id="wind-speed">Loading...</span></p>
+
+      <h3>Ocean</h3>
+      <p>Water temperature: <span id="water-temp">Loading...</span></p>
+      <p>Wave height: <span id="wave-height">Loading...</span></p>
+    </section>
+
+    <section id="species">
+      <h2>Species Likely to Be Seen</h2>
+      <p class="updated" id="species-summary">Loading...</p>
+
+      <div id="species-alerts"></div>
+
+      <div id="status-filter" class="filter-bar" role="group" aria-label="Filter species by status"></div>
+
+      <details class="legend">
+        <summary>What do these labels mean?</summary>
+        <dl>
+          <dt><span class="badge native">Native</span></dt>
+          <dd>Lives here naturally.</dd>
+          <dt><span class="badge invasive">Invasive</span></dt>
+          <dd>Brought here by people. It can harm native species and habitats. Never release it, and report sightings.</dd>
+          <dt><span class="badge endangered">Endangered</span></dt>
+          <dd>At risk of disappearing and protected by federal law. Never keep, touch, or disturb it.</dd>
+          <dt><span class="badge threatened">Threatened</span></dt>
+          <dd>Likely to become endangered and protected by federal law. Keep your distance.</dd>
+          <dt><span class="badge protected">Protected</span></dt>
+          <dd>Not endangered, but state or local law says you may not take it.</dd>
+        </dl>
+      </details>
+
+      <div id="likely-list" class="species-list"></div>
+
+      <h3>Also found here</h3>
+      <p class="updated">Found at this location, but conditions right now are less typical for them.</p>
+      <div id="other-list" class="species-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
