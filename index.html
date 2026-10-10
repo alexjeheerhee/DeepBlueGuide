@@ -1,70 +1,279 @@
 <!DOCTYPE html>
+<!-- deepBlueGuide - index.html 
+Author: Alex Rhee
+What this file does: Builds the layout of the app 
+- the home screen with ocean tiles and the detail page for each ocean (conditions, responses, Vibrio safety, and species). 
+app.js fills in the live data. 
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>deepBlueGuide</title>
-  <link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>deepBlueGuide</title>
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>deepBlueGuide</h1>
-    <p>Your local ocean and marine life guide</p>
-  </header>
+ <header class="topbar">
+   <a href="#" class="brand">deepBlueGuide</a>
+ </header>
 
-  <main>
-    <section id="conditions">
-      <h2>Ocean Conditions Today</h2>
 
-      <label for="location-select">Location</label>
-      <select id="location-select"></select>
+ <main>
+   <div id="home-view">
+     <div class="hero">
+       <div class="hero-inner">
+         <h1>Know your ocean before you go</h1>
+         <p class="hero-lead">deepBlueGuide shows what the water is like today, whether it's safe to swim and handle fish, and which marine life you might meet. It also shows how a warming ocean is changing all three.</p>
+         <ul class="hero-points">
+           <li><span aria-hidden="true">🌡️</span> Water temperature compared to normal</li>
+           <li><span aria-hidden="true">🦠</span> Vibrio bacteria safety check</li>
+           <li><span aria-hidden="true">🐟</span> Local species with climate and parasite notes</li>
+         </ul>
+       </div>
+       <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+         <path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"></path>
+       </svg>
+     </div>
 
-      <p class="updated">Updated: <span id="updated-time">Loading...</span></p>
 
-      <h3>Weather</h3>
-      <p>Air temperature: <span id="air-temp">Loading...</span></p>
-      <p>Sky: <span id="sky">Loading...</span></p>
-      <p>Wind speed: <span id="wind-speed">Loading...</span></p>
+     <div class="page">
+       <h2 class="pick-title">Choose an ocean</h2>
+       <div id="ocean-groups"></div>
+       <p class="home-note">Data from NOAA and Open-Meteo. Species information from NOAA Fisheries and state wildlife agencies.</p>
+     </div>
+   </div>
 
-      <h3>Ocean</h3>
-      <p>Water temperature: <span id="water-temp">Loading...</span></p>
-      <p>Wave height: <span id="wave-height">Loading...</span></p>
-    </section>
 
-    <section id="species">
-      <h2>Species Likely to Be Seen</h2>
-      <p class="updated" id="species-summary">Loading...</p>
+   <div id="detail-view" class="page" hidden>
+     <a href="#" class="back-link">&larr; All oceans</a>
+     <div class="place-title">
+       <span id="place-icon" class="place-icon" aria-hidden="true"></span>
+       <div>
+         <h1 id="place-name"></h1>
+         <p id="place-blurb"></p>
+       </div>
+     </div>
 
-      <div id="species-alerts"></div>
 
-      <div id="status-filter" class="filter-bar" role="group" aria-label="Filter species by status"></div>
+   <section id="conditions">
+     <h2>Ocean Conditions Today</h2>
 
-      <details class="legend">
-        <summary>What do these labels mean?</summary>
-        <dl>
-          <dt><span class="badge native">Native</span></dt>
-          <dd>Lives here naturally.</dd>
-          <dt><span class="badge invasive">Invasive</span></dt>
-          <dd>Brought here by people. It can harm native species and habitats. Never release it, and report sightings.</dd>
-          <dt><span class="badge endangered">Endangered</span></dt>
-          <dd>At risk of disappearing and protected by federal law. Never keep, touch, or disturb it.</dd>
-          <dt><span class="badge threatened">Threatened</span></dt>
-          <dd>Likely to become endangered and protected by federal law. Keep your distance.</dd>
-          <dt><span class="badge protected">Protected</span></dt>
-          <dd>Not endangered, but state or local law says you may not take it.</dd>
-        </dl>
-      </details>
 
-      <div id="likely-list" class="species-list"></div>
+     <p class="updated">Updated: <span id="updated-time">Loading...</span></p>
 
-      <h3>Also found here</h3>
-      <p class="updated">Found at this location, but conditions right now are less typical for them.</p>
-      <div id="other-list" class="species-list"></div>
-    </section>
-  </main>
 
-  <script src="app.js"></script>
+     <h3>Weather</h3>
+     <p>Air temperature: <span id="air-temp">Loading...</span></p>
+     <p>Sky: <span id="sky">Loading...</span></p>
+     <p>Wind speed: <span id="wind-speed">Loading...</span></p>
+
+
+     <h3>Ocean</h3>
+     <p>Water temperature: <span id="water-temp">Loading...</span></p>
+     <p>Compared to normal: <span id="water-anomaly" class="anomaly">Loading...</span></p>
+     <p class="updated" id="anomaly-note"></p>
+     <p>Wave height: <span id="wave-height">Loading...</span></p>
+     <p>Salinity: <span id="salinity">Loading...</span></p>
+     <p class="updated" id="salinity-note"></p>
+
+
+     <details class="legend">
+       <summary>Why does "compared to normal" matter?</summary>
+       <p>The ocean has absorbed more than 90% of the extra heat trapped by greenhouse gases, so sea surface temperatures are rising worldwide. Marine heatwaves (long stretches of unusually warm water) have become much more frequent since the 1980s.</p>
+       <p>Warmer-than-normal water can push fish toward cooler or deeper areas, change when they feed and spawn, and help some bacteria and parasites grow faster.</p>
+       <p class="source">Sources: IPCC Special Report on the Ocean and Cryosphere (2019); NOAA OISST v2.1.</p>
+     </details>
+
+
+     <details class="legend">
+       <summary>How is salinity changing, and why does it matter?</summary>
+       <p><strong>Melting ice adds fresh water.</strong> As glaciers and ice sheets melt, fresh water flows into the sea and dilutes it near the coast. In places like Greenland, layers of fresher water are building up at the surface, which scientists are watching because they could affect ocean currents.</p>
+       <p><strong>Estuaries swing between salty and fresh.</strong> In bays where rivers meet the sea, like Chesapeake Bay, droughts make the water saltier and floods make it fresher. Climate change is making both droughts and heavy rain more extreme.</p>
+       <p><strong>Fish and other life feel it.</strong> Many fish, crabs, and oysters can only live in certain salinity ranges. Changes in river flow can shift where they live, when they spawn, and how much food is available for their young.</p>
+       <p><strong>Germs and parasites respond too.</strong> Some bacteria, such as <em>Vibrio</em>, grow best in warm, low-salinity brackish water. Sea lice on salmon, on the other hand, struggle in fresher water.</p>
+       <p class="source">Sources: USGS Coastal Salinity Index; NOAA National Ocean Service; Chesapeake Bay Program.</p>
+     </details>
+   </section>
+
+
+   <section id="responses">
+     <h2>Same Water, Different Responses</h2>
+     <p>The same water can be fine for one living thing and stressful for another. Move the sliders or try a scenario to see how each one reacts.</p>
+
+
+     <div id="resp-scenarios" class="filter-bar" role="group" aria-label="Try a scenario"></div>
+
+
+     <div class="resp-sliders">
+       <label for="resp-temp">Water temperature <output id="resp-temp-value"></output></label>
+       <input type="range" id="resp-temp" min="32" max="95" step="1" value="70">
+
+
+       <label for="resp-salinity">Salinity <output id="resp-salinity-value"></output></label>
+       <input type="range" id="resp-salinity" min="0" max="36" step="1" value="15">
+
+
+       <label for="resp-oxygen">Dissolved oxygen <output id="resp-oxygen-value"></output></label>
+       <input type="range" id="resp-oxygen" min="0" max="12" step="0.5" value="7">
+     </div>
+
+
+     <table class="resp-table">
+       <thead>
+         <tr>
+           <th scope="col">Organism</th>
+           <th scope="col">Temp</th>
+           <th scope="col">Salinity</th>
+           <th scope="col">Oxygen</th>
+         </tr>
+       </thead>
+       <tbody id="resp-rows"></tbody>
+     </table>
+
+
+     <p class="resp-legend">
+       <span class="resp-key good">✓ Does well</span>
+       <span class="resp-key stressed">⚠ Stressed</span>
+       <span class="resp-key bad">✕ Can't cope</span>
+       <span class="resp-key none">— Not a main factor</span>
+     </p>
+     <p class="updated">For <em>Vibrio</em>, ✓ means the germ grows fast, which is bad news for people. Water temperature starts at today's value. Salinity and oxygen start at typical values because they aren't measured live here yet.</p>
+
+
+     <details class="legend">
+       <summary>Why do they react so differently?</summary>
+       <p><strong>Every species has its own comfort range.</strong> Each one has a range of temperature, salinity, and oxygen where it can grow, feed, and reproduce. Outside that range it gets stressed, and far outside it can die.</p>
+       <p><strong>Moving away vs. staying put.</strong> Fish and crabs can swim away from bad water. Oysters are attached to the bottom and can only close their shells and wait.</p>
+       <p><strong>The temperature-oxygen squeeze.</strong> In summer, the top of Chesapeake Bay can get too warm for striped bass while the deep water loses oxygen. Warm water holds less oxygen, so heatwaves and low oxygen often come together.</p>
+       <p><strong>One species' good day is another's bad day.</strong> Warm, brackish water is great for <em>Vibrio</em> bacteria but stressful for striped bass. That's why scientists track many organisms, not just one.</p>
+       <p class="source">Sources: Chesapeake Bay Program; Maryland DNR Eyes on the Bay; NOAA Chesapeake Bay Office; Coutant (1985), Transactions of the American Fisheries Society. Ranges are simplified for learning.</p>
+     </details>
+   </section>
+
+
+   <section id="vibrio">
+     <h2>Health &amp; Safety: Vibrio</h2>
+     <p class="vibrio-headline">Vibrio conditions: <span id="vibrio-level" class="vibrio-level">Loading...</span></p>
+     <p id="vibrio-reason">Loading...</p>
+     <div id="vibrio-notes" class="vibrio-notes"></div>
+     <p id="vibrio-warm-note" class="vibrio-warm"></p>
+
+
+     <h3>How to stay safe</h3>
+     <ul class="safety-grid">
+       <li class="safety-card">
+         <span class="safety-icon" aria-hidden="true">🩹</span>
+         <strong>Cover cuts</strong>
+         <span>Stay out of salt or brackish water with a cut or new tattoo, or cover it with a waterproof bandage.</span>
+       </li>
+       <li class="safety-card">
+         <span class="safety-icon" aria-hidden="true">🧤</span>
+         <strong>Wear gloves</strong>
+         <span>Protect your hands when handling raw seafood or cleaning fish.</span>
+       </li>
+       <li class="safety-card">
+         <span class="safety-icon" aria-hidden="true">🦪</span>
+         <strong>Cook shellfish</strong>
+         <span>Don't eat raw or undercooked oysters and other shellfish.</span>
+       </li>
+       <li class="safety-card">
+         <span class="safety-icon" aria-hidden="true">🧼</span>
+         <strong>Wash wounds</strong>
+         <span>Clean any wound with soap and clean water after contact with seawater or raw seafood.</span>
+       </li>
+       <li class="safety-card safety-card-urgent">
+         <span class="safety-icon" aria-hidden="true">🏥</span>
+         <div>
+           <strong>See a doctor fast</strong>
+           <span>If a wound gets red, swollen, or painful, get help right away and say you were in salt water.</span>
+         </div>
+       </li>
+     </ul>
+     <p class="risk-note"><span aria-hidden="true">⚠️</span> People with liver disease, diabetes, or a weakened immune system are at higher risk of serious illness.</p>
+
+
+     <p class="disclaimer">This is an estimate based on water temperature and water type. It is not a test of the water. For official advisories, check your state health department.</p>
+
+
+     <details class="legend">
+       <summary>What is Vibrio, and why is it spreading?</summary>
+       <p><strong>What it is.</strong> <em>Vibrio</em> are bacteria that live naturally in warm coastal water. Some kinds, like <em>Vibrio vulnificus</em>, can cause serious wound infections or illness from eating raw shellfish.</p>
+       <p><strong>Why it is spreading.</strong> Vibrio grows faster in warm water and prefers low-salinity water where rivers meet the sea. As the ocean warms, the season with good conditions for Vibrio is getting longer, and the area is moving north.</p>
+       <p><strong>What scientists have found.</strong> A study of the eastern U.S. found that <em>V. vulnificus</em> wound infections increased about eightfold from 1988 to 2018, and the area where cases happen moved north each year. Long-term plankton records from the North Atlantic also show Vibrio becoming more common as the water warmed.</p>
+       <p><strong>Why it matters here.</strong> Chesapeake Bay is warm and brackish in summer, which is exactly the kind of water Vibrio prefers.</p>
+       <p class="source">Sources: CDC, About Vibrio Infection; Archer et al., Scientific Reports (2023); Vezzulli et al., PNAS (2016).</p>
+     </details>
+   </section>
+
+
+   <section id="species">
+     <h2>Species Likely to Be Seen</h2>
+     <p class="updated" id="species-summary">Loading...</p>
+
+
+     <div id="species-alerts"></div>
+
+
+     <div id="status-filter" class="filter-bar" role="group" aria-label="Filter species by status"></div>
+
+
+     <details class="legend">
+       <summary>What do these labels mean?</summary>
+       <dl>
+         <dt><span class="badge native">Native</span></dt>
+         <dd>Lives here naturally.</dd>
+         <dt><span class="badge invasive">Invasive</span></dt>
+         <dd>Brought here by people. It can harm native species and habitats. Never release it, and report sightings.</dd>
+         <dt><span class="badge endangered">Endangered</span></dt>
+         <dd>At risk of disappearing and protected by federal law. Never keep, touch, or disturb it.</dd>
+         <dt><span class="badge threatened">Threatened</span></dt>
+         <dd>Likely to become endangered and protected by federal law. Keep your distance.</dd>
+         <dt><span class="badge protected">Protected</span></dt>
+         <dd>Not endangered, but state or local law says you may not take it.</dd>
+       </dl>
+     </details>
+
+
+     <details class="legend">
+       <summary>How is climate change moving marine life?</summary>
+       <p><strong>Moving toward the poles.</strong> As the ocean warms, many fish follow the water temperature they prefer. Along the U.S. East Coast, species such as summer flounder and black sea bass have shifted north over the past few decades.</p>
+       <p><strong>Changing the calendar.</strong> Warmer water and changing river flow can make salmon and trout migrate and spawn earlier. If young fish arrive before their food does, fewer of them survive.</p>
+       <p><strong>Losing cold-water homes.</strong> Fish that need cold water, like trout, can lose habitat as streams warm. Moving fast does not always mean a species is safe: some shift quickly and still decline.</p>
+       <p>Cards marked <strong>Climate watch</strong> show how a species near you is being affected.</p>
+       <p class="source">Sources: NOAA Fisheries Climate Science; Pinsky et al., Science (2013); IPCC Special Report on the Ocean and Cryosphere (2019).</p>
+     </details>
+
+
+     <details class="legend">
+       <summary>How are parasites changing, and is my fish safe to eat?</summary>
+       <p><strong>Warmer water speeds up many parasites.</strong> Water temperature controls how fast parasites like sea lice grow. Warming tends to tip the balance toward the parasite, especially where a fish species is at the warm edge of its range.</p>
+       <p><strong>More hosts can mean more worms.</strong> Roundworms such as <em>Anisakis</em> and codworm finish their life cycle in whales, dolphins, and seals. Where these animals have recovered, and as ecosystems change, the worms are being found more often in Atlantic fish.</p>
+       <p><strong>It depends on the place.</strong> Changes are not the same everywhere. In one region a parasite may increase while in another it disappears, so long-term local monitoring matters.</p>
+       <p><strong>Eating fish safely.</strong> Cooking fish until the thickest part reaches 145°F (63°C) kills parasites. If you want to eat fish raw or lightly cured, it should be frozen first: at −4°F (−20°C) or colder for 7 days. A home freezer may not get that cold, so check yours or buy fish labeled for raw use.</p>
+       <p>Cards with a <strong>Parasite note</strong> show what a local species can carry.</p>
+       <p class="source">Sources: FDA Fish and Fishery Products Hazards and Controls Guidance; CDC, Anisakiasis; NOAA Fisheries.</p>
+     </details>
+
+
+     <div id="likely-list" class="species-list"></div>
+
+
+     <h3>Also found here</h3>
+     <p class="updated">Found at this location, but conditions right now are less typical for them.</p>
+     <div id="other-list" class="species-list"></div>
+   </section>
+   </div>
+ </main>
+
+
+ <script src="app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 

@@ -1,4 +1,15 @@
-/* Color palette: change these to make it your own */
+/*
+ deepBlueGuide - style.css
+ Author: Alex Rhee
+ What this file does: Controls how the app looks - colors, sizes, spacing,
+ and layout for phones and computers.  
+ 
+ How CSS works here:
+ - ".name" styles every element with class="name" in index.html or app.js
+ - "#name" styles the one element with id="name"
+ - "--name" is a variable (a saved value) that is used with var(--name)
+*/
+
 :root {
   --deep-blue: #0b2545;
   --ocean-blue: #13315c;
@@ -18,27 +29,236 @@ body {
   color: var(--deep-blue);
 }
 
-header {
-  background: linear-gradient(var(--deep-blue), var(--ocean-blue));
+[hidden] {
+  display: none !important;
+}
+
+/* ===== Top bar ===== */
+.topbar {
+  background: var(--deep-blue);
+  padding: 12px 16px;
+}
+
+.brand {
   color: white;
-  padding: 24px 16px;
-  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
+.brand:focus-visible,
+.back-link:focus-visible,
+.ocean-tile:focus-visible {
+  outline: 3px solid #f2c94c;
+  outline-offset: 3px;
 }
 
-header p {
-  margin: 4px 0 0;
-  color: var(--wave-blue);
-}
-
-main {
-  max-width: 600px;
+.page {
+  max-width: 640px;
   margin: 0 auto;
   padding: 16px;
+}
+
+/* ===== Home: introduction ===== */
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--deep-blue) 0%, var(--ocean-blue) 60%, #1d4e89 100%);
+  color: white;
+  padding: 24px 16px 72px;
+}
+
+.hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 8px 0 12px;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.hero-lead {
+  margin: 0 0 16px;
+  line-height: 1.5;
+  color: #dbe7f3;
+}
+
+.hero-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-points li {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #dbe7f3;
+}
+
+.hero-points span {
+  flex-shrink: 0;
+  width: 1.4em;
+}
+
+.hero-wave {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 48px;
+}
+
+.hero-wave path {
+  fill: var(--foam);
+}
+
+/* ===== Home: ocean tiles ===== */
+.pick-title {
+  font-size: 1.3rem;
+  margin: 4px 0 8px;
+}
+
+.ocean-group {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.ocean-group h3 {
+  margin: 12px 0 8px;
+  font-size: 1rem;
+}
+
+.ocean-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 560px) {
+  .ocean-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ocean-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 12px;
+  text-decoration: none;
+  color: var(--deep-blue);
+  box-shadow: 0 1px 3px rgba(11, 37, 69, 0.12);
+  border-top: 4px solid var(--region-color, var(--wave-blue));
+  transition: transform 0.15s ease;
+}
+
+.ocean-tile:active {
+  transform: scale(0.97);
+}
+
+.tile-icon {
+  font-size: 2rem;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--region-tint, var(--foam));
+  margin-bottom: 6px;
+}
+
+.tile-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.tile-blurb {
+  font-size: 0.8rem;
+  color: var(--ocean-blue);
+  line-height: 1.3;
+}
+
+.tile-count {
+  font-size: 0.75rem;
+  color: #5b6f86;
+  margin-top: 4px;
+}
+
+.tile-last {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--deep-blue);
+  color: white;
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-top: 4px;
+}
+
+.region-atlantic     { --region-color: #2f6db5; --region-tint: #e3eefa; }
+.region-gulf         { --region-color: #1a9a8f; --region-tint: #ddf3f0; }
+.region-pacific      { --region-color: #3b7d4f; --region-tint: #e2f1e6; }
+.region-north-island { --region-color: #c2662d; --region-tint: #fbeadf; }
+
+.home-note {
+  font-size: 0.8rem;
+  color: #5b6f86;
+  margin-top: 8px;
+}
+
+/* ===== Ocean page header ===== */
+.back-link {
+  display: inline-block;
+  color: var(--ocean-blue);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  margin-bottom: 4px;
+}
+
+.place-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.place-icon {
+  font-size: 2.2rem;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 1px 3px rgba(11, 37, 69, 0.12);
+}
+
+.place-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.place-title p {
+  margin: 2px 0 0;
+  color: var(--ocean-blue);
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ocean-tile {
+    transition: none;
+  }
 }
 
 section {
@@ -294,6 +514,267 @@ select:focus {
   justify-content: space-between;
   font-size: 0.75rem;
   color: var(--ocean-blue);
+}
+
+/* ===== Compared to normal ===== */
+.anomaly.warm      { color: #8a3a06; font-weight: 600; }
+.anomaly.very-warm { color: #8b1a1a; font-weight: 700; }
+.anomaly.cool      { color: #0b4a6e; font-weight: 600; }
+.anomaly.very-cool { color: #0b2545; font-weight: 700; }
+
+#anomaly-note:empty {
+  display: none;
+}
+
+#salinity-note:empty {
+  display: none;
+}
+
+/* ===== Climate watch (PPT 3) ===== */
+.climate {
+  border-left: 3px solid var(--ocean-blue);
+  background: #eef3f9;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.climate .source {
+  margin-top: 2px;
+}
+
+/* ===== Vibrio card (PPT 4) ===== */
+.vibrio-headline {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.vibrio-level {
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #eeeeee;
+  color: #4a4a4a;
+}
+
+.vibrio-level.low      { background: #dcefe3; color: #1e5b36; }
+.vibrio-level.moderate { background: #fbeec2; color: #6b4d00; }
+.vibrio-level.high     { background: #f9d6d6; color: #8b1a1a; }
+
+.vibrio-notes p,
+.vibrio-warm {
+  font-size: 0.9rem;
+  color: var(--ocean-blue);
+}
+
+.vibrio-warm:empty {
+  display: none;
+}
+
+.safety-list {
+  margin: 4px 0 8px;
+  padding-left: 20px;
+}
+
+.safety-list li {
+  margin-bottom: 4px;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  background: var(--foam);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px 0 12px;
+}
+
+/* ===== Parasite note (PPT 5) ===== */
+.parasite {
+  border-left: 3px solid #8a6d1a;
+  background: #faf5e6;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.parasite .source {
+  margin-top: 2px;
+}
+
+/* ===== How to stay safe: picture cards ===== */
+.safety-grid {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.safety-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  background: #f3f8fc;
+  border-radius: 14px;
+  padding: 12px 10px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--ocean-blue);
+}
+
+.safety-card strong {
+  font-size: 0.95rem;
+  color: var(--deep-blue);
+}
+
+.safety-icon {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 1px 3px rgba(11, 37, 69, 0.12);
+  margin-bottom: 2px;
+}
+
+/* The "see a doctor" card is the most important, so it spans the full width */
+.safety-card-urgent {
+  grid-column: 1 / -1;
+  background: #fbeaea;
+  flex-direction: row;
+  text-align: left;
+  gap: 12px;
+}
+
+.safety-card-urgent > div {
+  flex: 1;
+}
+
+.safety-card-urgent strong {
+  display: block;
+}
+
+.risk-note {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--ocean-blue);
+}
+
+/* ===== Same Water, Different Responses ===== */
+.resp-sliders {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 12px;
+}
+
+.resp-sliders label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 6px 0 0;
+}
+
+.resp-sliders output {
+  font-weight: 400;
+  color: var(--ocean-blue);
+  text-align: right;
+}
+
+.resp-sliders input[type="range"] {
+  width: 100%;
+  accent-color: var(--ocean-blue);
+}
+
+.resp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.resp-table thead th {
+  font-size: 0.8rem;
+  color: var(--ocean-blue);
+  text-align: center;
+  padding: 4px;
+  border-bottom: 2px solid var(--wave-blue);
+}
+
+.resp-table thead th:first-child,
+.resp-table tbody th {
+  text-align: left;
+}
+
+.resp-table tbody th {
+  font-weight: 600;
+  padding: 10px 4px 2px;
+}
+
+.resp-cell {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 18%;
+  padding: 8px 2px 2px;
+}
+
+.resp-cell span[aria-hidden] {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.resp-cell.good     span[aria-hidden] { background: #dcefe3; color: #1e5b36; }
+.resp-cell.stressed span[aria-hidden] { background: #fbeec2; color: #6b4d00; }
+.resp-cell.bad      span[aria-hidden] { background: #f9d6d6; color: #8b1a1a; }
+.resp-cell.none     span[aria-hidden] { background: #eeeeee; color: #6b6b6b; }
+
+/* For the germ, "does well" is a risk to people, so ✓ gets a red outline */
+.resp-cell.germ.good span[aria-hidden] { box-shadow: 0 0 0 2px #c0392b; }
+
+.resp-note-row td {
+  font-size: 0.82rem;
+  color: var(--ocean-blue);
+  padding: 2px 4px 10px;
+  border-bottom: 1px solid #e3e9f0;
+}
+
+.resp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.resp-key {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.resp-key.good     { background: #dcefe3; color: #1e5b36; }
+.resp-key.stressed { background: #fbeec2; color: #6b4d00; }
+.resp-key.bad      { background: #f9d6d6; color: #8b1a1a; }
+.resp-key.none     { background: #eeeeee; color: #4a4a4a; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 
